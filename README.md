@@ -12,6 +12,4 @@
 
 7. duplicate logic
 
-8. Exception type
-
-9. long method
+8. long method
