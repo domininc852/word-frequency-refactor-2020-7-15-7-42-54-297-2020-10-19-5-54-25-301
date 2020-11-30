@@ -15,3 +15,5 @@
 8. long method
 
 9. Reduced try catch
+
+10 delete redundant throws Exception in test file
