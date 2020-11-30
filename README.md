@@ -17,3 +17,5 @@
 9. Reduced try catch
 
 10 delete redundant throws Exception in test file
+
+11. make the test functions and WordFrequency class package-private
