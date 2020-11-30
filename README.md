@@ -13,3 +13,5 @@
 7. duplicate logic
 
 8. long method
+
+9. Reduced try catch
