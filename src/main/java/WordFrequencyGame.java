@@ -28,10 +28,9 @@ public class WordFrequencyGame {
                 for (Map.Entry<String, List<WordFrequency>> entry : wordCountMap.entrySet()) {
                     wordCountList.add(new WordFrequency(entry.getKey(), entry.getValue().size()));
                 }
-                wordFrequencyList = wordCountList;
-                wordFrequencyList.sort((word1, word2) -> word2.getCount() - word1.getCount());
+                wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
                 StringJoiner wordFrequencyResult = new StringJoiner(NEW_LINE);
-                for (WordFrequency word : wordFrequencyList) {
+                for (WordFrequency word : wordCountList) {
                     String s = word.getWord() + " " + word.getCount();
                     wordFrequencyResult.add(s);
                 }
