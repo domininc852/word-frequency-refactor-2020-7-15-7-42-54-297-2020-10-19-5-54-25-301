@@ -6,8 +6,12 @@
 
 4. Renaming
 
-5. duplicate logic
+5. inline
 
-6. Exception type
+6. unnecessary assignment
 
-7. long method
+7. duplicate logic
+
+8. Exception type
+
+9. long method
