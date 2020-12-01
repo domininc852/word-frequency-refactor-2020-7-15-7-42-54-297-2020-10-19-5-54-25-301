@@ -5,14 +5,16 @@ public class WordFrequencyGame {
 
     private static final String WHITE_SPACE_REGEX = "\\s+";
     private static final String NEW_LINE = "\n";
+    private static final String CALCULATE_ERROR = "Calculate Error";
 
-    public String getResult(String sentence) throws CalculateErrorException {
+
+    public String getResult(String sentence) {
         try {
             List<WordFrequency> wordCountList = buildWordCountList(sentence);
             wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
             return generateWordFrequency(wordCountList);
-        } catch (Exception exception) {
-            throw new CalculateErrorException();
+        } catch (NullPointerException nullPointerException) {
+            return CALCULATE_ERROR;
         }
     }
 
