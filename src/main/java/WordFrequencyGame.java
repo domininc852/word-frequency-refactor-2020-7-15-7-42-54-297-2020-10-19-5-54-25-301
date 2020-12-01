@@ -11,7 +11,7 @@ public class WordFrequencyGame {
             List<WordFrequency> wordCountList = buildWordCountList(sentence);
             wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
             return generateWordFrequency(wordCountList);
-        }catch(Exception exception){
+        } catch (Exception exception) {
             throw new CalculateErrorException();
         }
     }

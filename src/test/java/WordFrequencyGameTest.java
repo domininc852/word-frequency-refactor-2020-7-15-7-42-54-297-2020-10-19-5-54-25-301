@@ -38,7 +38,7 @@ class WordFrequencyGameTest {
     }
 
     @Test
-    void should_pracess_two_same_words_with_sorted() throws CalculateErrorException {
+    void should_process_two_same_words_with_sorted() throws CalculateErrorException {
         //Given
         String inputStr = "the the is";
         String expectResult = "the 2\nis 1";
@@ -56,10 +56,9 @@ class WordFrequencyGameTest {
     @Test
     void should_return_calculate_error_message() {
         //Given
-        String inputStr = null;
         WordFrequencyGame game = new WordFrequencyGame();
         final CalculateErrorException calculateErrorException = assertThrows(CalculateErrorException.class, () -> {
-            game.getResult(inputStr);
+            game.getResult(null);
         });
         assertEquals("Calculate Error", calculateErrorException.getMessage());
     }
