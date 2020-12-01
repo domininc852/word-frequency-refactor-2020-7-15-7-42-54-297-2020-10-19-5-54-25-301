@@ -66,8 +66,8 @@ class WordFrequencyGameTest {
     private void validate_Input_words_process_to_expected_word(String inputStr, String expectResult) throws CalculateErrorException {
         WordFrequencyGame game = new WordFrequencyGame();
         //When
-        String result = game.getResult(inputStr);
+        String actual = game.getResult(inputStr);
         //Then
-        assertEquals(result, expectResult);
+        assertEquals(expectResult, actual);
     }
 }
