@@ -52,12 +52,13 @@ class WordFrequencyGameTest {
         String expectResult = "is 2\nthe 1";
         validate_Input_words_process_to_expected_word(inputStr, expectResult);
     }
+
     @Test
     void should_return_calculate_error_message() {
         //Given
         String inputStr = null;
         WordFrequencyGame game = new WordFrequencyGame();
-        final CalculateErrorException calculateErrorException =assertThrows(CalculateErrorException.class,()->{
+        final CalculateErrorException calculateErrorException = assertThrows(CalculateErrorException.class, () -> {
             game.getResult(inputStr);
         });
         assertEquals("Calculate Error", calculateErrorException.getMessage());
