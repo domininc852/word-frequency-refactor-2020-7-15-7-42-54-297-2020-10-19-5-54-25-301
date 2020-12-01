@@ -6,10 +6,14 @@ public class WordFrequencyGame {
     private static final String WHITE_SPACE_REGEX = "\\s+";
     private static final String NEW_LINE = "\n";
 
-    public String getResult(String sentence) {
-        List<WordFrequency> wordCountList = buildWordCountList(sentence);
-        wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
-        return generateWordFrequency(wordCountList);
+    public String getResult(String sentence) throws CalculateErrorException {
+        try {
+            List<WordFrequency> wordCountList = buildWordCountList(sentence);
+            wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
+            return generateWordFrequency(wordCountList);
+        }catch(Exception exception){
+            throw new CalculateErrorException();
+        }
     }
 
     private String generateWordFrequency(List<WordFrequency> wordCountList) {
