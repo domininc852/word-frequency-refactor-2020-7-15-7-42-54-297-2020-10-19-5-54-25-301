@@ -9,17 +9,11 @@ public class WordFrequencyGame {
     public String getResult(String sentence) {
         List<WordFrequency> wordCountList = buildWordCountList(sentence);
         wordCountList.sort((word1, word2) -> word2.getCount() - word1.getCount());
-        StringJoiner wordFrequencyResult = generateWordFrequency(wordCountList);
-        return wordFrequencyResult.toString();
+        return generateWordFrequency(wordCountList);
     }
 
-    private StringJoiner generateWordFrequency(List<WordFrequency> wordCountList) {
-        StringJoiner wordFrequencyResult = new StringJoiner(NEW_LINE);
-        for (WordFrequency word : wordCountList) {
-            String wordFrequencyLine = String.format("%s %d", word.getWord(), word.getCount());
-            wordFrequencyResult.add(wordFrequencyLine);
-        }
-        return wordFrequencyResult;
+    private String generateWordFrequency(List<WordFrequency> wordCountList) {
+        return wordCountList.stream().map(word -> String.format("%s %d", word.getWord(), word.getCount())).collect(Collectors.joining(NEW_LINE));
     }
 
     private List<WordFrequency> buildWordCountList(String sentence) {
